@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -47,25 +47,33 @@ const Formulario = () => {
       <Form onSubmit={cadastrarContato}>
         <CampoCadastro
           value={nome}
-          onChange={(evento) => setNome(evento.target.value)}
+          onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+            setNome(evento.target.value)
+          }
           type="text"
           placeholder="Nome"
         />
         <CampoCadastro
           value={telefone}
-          onChange={(evento) => setTelefone(evento.target.value)}
+          onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+            setTelefone(evento.target.value)
+          }
           type="tel"
           placeholder="Telefone - (DD)XXXXX-XXXX"
         />
         <CampoCadastro
           value={email}
-          onChange={(evento) => setEmail(evento.target.value)}
+          onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+            setEmail(evento.target.value)
+          }
           type="text"
           placeholder="Email - exemplo@email.com.br"
         />
         <CampoCadastro
           value={descricao}
-          onChange={(evento) => setDescricao(evento.target.value)}
+          onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+            setDescricao(evento.target.value)
+          }
           as="textarea"
           placeholder="Caixa de Recado"
         />

@@ -86,7 +86,9 @@ const CardContato = ({
         <li>
           <S.ContatoInfos
             value={telefoneEditado}
-            onChange={(e) => setTelefoneEditado(e.target.value)}
+            onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+              setTelefoneEditado(evento.target.value)
+            }
             disabled={!estaEditando}
             placeholder="telefone"
           />
@@ -94,7 +96,9 @@ const CardContato = ({
         <li>
           <S.ContatoInfos
             value={emailEditado}
-            onChange={(e) => setEmailEditado(e.target.value)}
+            onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+              setEmailEditado(evento.target.value)
+            }
             disabled={!estaEditando}
             placeholder="e-mail"
           />

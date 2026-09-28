@@ -7,6 +7,8 @@ import * as enums from '../../utils/enums/Contato'
 
 import { useNavigate } from 'react-router-dom'
 
+import { ChangeEvent } from 'react'
+
 type Props = {
   mostrarFiltro: boolean
 }
@@ -26,7 +28,9 @@ const BarraLateral = ({ mostrarFiltro }: Props) => {
                 type="text"
                 placeholder="Buscar"
                 value={termo}
-                onChange={(e) => dispatch(alterarTermo(e.target.value))}
+                onChange={(evento: ChangeEvent<HTMLInputElement>) =>
+                  dispatch(alterarTermo(evento.target.value))
+                }
               />
               <FiltroContato
                 valor={enums.Status.PENDENTE}
